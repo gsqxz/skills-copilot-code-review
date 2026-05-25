@@ -30,6 +30,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Debug arquivos .github
+        run: |
+          echo "PWD: $(pwd)"
+          echo "GITHUB_WORKSPACE: $GITHUB_WORKSPACE"
+          git rev-parse HEAD
+          ls -lR .github
+        shell: bash
+
       - name: Get response templates
         uses: actions/checkout@v4
         with:
